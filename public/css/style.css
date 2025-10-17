@@ -1,3 +1,125 @@
-.test {
-  color: red;
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+/* ====== HEADER ====== */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 60px;
+}
+
+.header .inner-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .inner-logo img {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.header .inner-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Menu */
+.inner-menu {
+  display: flex;
+  align-items: center;
+}
+
+.inner-menu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+}
+
+.inner-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.inner-menu ul li a:hover {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+/* ====== MAIN CONTENT ====== */
+main {
+  padding: 60px 100px;
+}
+
+main h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+main ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 50px;
+  letter-spacing: 1px;
+}
+
+footer:hover {
+  background-color: #f0f0f0;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .header .container-fluid {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .inner-menu ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  main {
+    padding: 40px 20px;
+  }
 }
