@@ -1,6 +1,5 @@
 import { DataTypes, INTEGER } from "sequelize";
 import sequelize from "../config/database";
-import { title } from "process";
 
 const Tour = sequelize.define(
   "Tour",
@@ -41,6 +40,20 @@ const Tour = sequelize.define(
     },
     status: {
       type: DataTypes.STRING(20),
+    },
+    position: {
+      type: DataTypes.INTEGER,
+    },
+    slug: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+    },
+    deleted: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    deletedAt: {
+      type: DataTypes.DATE,
     },
   },
   {
