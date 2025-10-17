@@ -1,9 +1,10 @@
-doctype html    
-html 
-    head 
-        title Tours Page
-    body 
-        h1 Danh sách Tours
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+block main 
+    .container.my-3 
+        .row 
+            .col-12 
+                +box-head(pageTitle)
         ul 
             each tour in tours
-                li #{tour.title} - $#{tour.price}
+                li #{tour.title}
