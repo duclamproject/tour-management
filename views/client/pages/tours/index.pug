@@ -4,3 +4,6 @@ html
         title Tours Page
     body 
         h1 Danh sách Tours
+        ul 
+            each tour in tours
+                li #{tour.title} - $#{tour.price}
