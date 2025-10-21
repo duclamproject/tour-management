@@ -192,3 +192,175 @@ footer:hover {
     height: 180px;
   }
 }
+/* === TOUR DETAIL PAGE STYLE === */
+.tour-detail {
+  padding: 2rem 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #222;
+  background-color: #fafafa;
+}
+
+/* --- Image Gallery --- */
+.tour-detail .inner-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.tour-detail .inner-image {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.tour-detail .inner-image:hover {
+  transform: scale(1.03);
+}
+
+.tour-detail .inner-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+/* --- Tour Info --- */
+.tour-detail .inner-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #0f4c81;
+}
+
+.tour-detail .inner-barcode,
+.tour-detail .inner-time-start,
+.tour-detail .inner-stock {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.tour-detail .inner-barcode i,
+.tour-detail .inner-time-start i,
+.tour-detail .inner-stock i {
+  color: #0f4c81;
+  margin-right: 6px;
+}
+
+/* --- Pricing --- */
+.tour-detail .inner-price-special {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e63946;
+  margin-top: 1rem;
+}
+
+.tour-detail .inner-price {
+  font-size: 1rem;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.tour-detail .inner-percent {
+  display: inline-block;
+  background-color: #e63946;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Add to Cart Form --- */
+.tour-detail form[form-add-to-cart] {
+  margin-top: 1rem;
+}
+
+.tour-detail input.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.tour-detail input.form-control:focus {
+  border-color: #0f4c81;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+}
+
+.tour-detail .btn-success {
+  background-color: #0f4c81;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tour-detail .btn-success:hover {
+  background-color: #09385c;
+  transform: translateY(-2px);
+}
+
+/* --- Tour Information --- */
+.tour-detail .inner-infomation {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tour-detail .inner-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f4c81;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.tour-detail .inner-label::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #0f4c81;
+  margin-top: 0.25rem;
+  border-radius: 2px;
+}
+
+.tour-detail .inner-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .tour-detail .row > .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .tour-detail .inner-image img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tour-detail .inner-title {
+    font-size: 1.4rem;
+  }
+
+  .tour-detail .inner-price-special {
+    font-size: 1.3rem;
+  }
+
+  .tour-detail .inner-images {
+    grid-template-columns: 1fr;
+  }
+}
