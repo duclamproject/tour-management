@@ -364,3 +364,49 @@ footer:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* === ALERT STYLING === */
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Mặc định alert success */
+.alert-success {
+  background-color: #d1e7dd;
+  border-left: 5px solid #0f5132;
+  color: #0f5132;
+}
+
+/* Nút đóng */
+.alert [close-alert] {
+  margin-left: auto;
+  cursor: pointer;
+  font-weight: bold;
+  color: inherit;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Hiệu ứng ẩn */
+.alert-hidden {
+  opacity: 0;
+  transform: translateY(-15px);
+  pointer-events: none;
+}
+
+/* Hiệu ứng hiển thị */
+.alert:not(.alert-hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}

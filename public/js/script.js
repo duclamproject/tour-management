@@ -20,6 +20,23 @@ var swiper2 = new Swiper(".mySwiper2", {
 // End Swiper
 
 // Cart
+
+const alertAddCartSusscess = () => {
+  const alertAddCartSuccess = document.querySelector(
+    "[alert-add-cart-susscess]"
+  );
+
+  alertAddCartSuccess.classList.remove("alert-hidden");
+
+  const closeAlert = alertAddCartSuccess.querySelector("[close-alert]");
+  closeAlert.addEventListener("click", () => {
+    alertAddCartSuccess.classList.add("alert-hidden");
+  });
+  setTimeout(() => {
+    alertAddCartSuccess.classList.add("alert-hidden");
+  }, 3000);
+};
+
 const cart = localStorage.getItem("cart");
 // Check cart tồn tại chưa, nếu chưa thì tạo mới
 if (!cart) {
@@ -53,6 +70,7 @@ if (formAddToCart) {
       }
 
       localStorage.setItem("cart", JSON.stringify(cart));
+      alertAddCartSusscess();
     }
   });
 }
