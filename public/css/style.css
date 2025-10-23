@@ -21,21 +21,40 @@ body {
   z-index: 1000;
 }
 
+/* Bố cục hàng ngang cho container chính */
 .header .container-fluid {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 60px;
+  justify-content: space-between;
 }
 
+/* Giả lập hệ thống .row và .col-x (nếu không dùng Bootstrap) */
+.header .row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header .col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.header .col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+/* --- Logo --- */
 .header .inner-logo {
   display: flex;
   align-items: center;
 }
 
 .header .inner-logo img {
-  width: 60px;
+  max-width: 150px;
   height: auto;
+  border-radius: 6px;
   transition: transform 0.3s ease;
 }
 
@@ -43,31 +62,81 @@ body {
   transform: scale(1.05);
 }
 
-/* Menu */
-.inner-menu {
+/* --- Menu --- */
+.header .inner-menu {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.inner-menu ul {
+.header .inner-menu ul {
   display: flex;
   align-items: center;
   list-style: none;
   gap: 40px;
+  margin: 0;
+  padding: 0;
 }
 
-.inner-menu ul li a {
+.header .inner-menu ul li {
+  display: inline-block;
+}
+
+.header .inner-menu ul li a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  padding: 5px 0;
   transition: color 0.3s ease, border-bottom 0.3s ease;
-  padding-bottom: 3px;
   border-bottom: 2px solid transparent;
 }
 
-.inner-menu ul li a:hover {
-  color: #007bff;
-  border-bottom: 2px solid #007bff;
+.header .inner-menu ul li a:hover {
+  color: #0f4c81;
+  border-bottom: 2px solid #0f4c81;
+}
+
+/* --- Mini cart badge --- */
+.header .inner-menu [mini-cart] {
+  font-weight: 600;
+  color: #fff;
+  background-color: #e63946;
+  padding: 0px 6px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .header .col-3 {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .header .col-9 {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .header .inner-menu ul {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .container-fluid {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header .inner-menu {
+    justify-content: center;
+  }
 }
 
 /* ====== MAIN CONTENT ====== */
