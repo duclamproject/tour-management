@@ -665,4 +665,63 @@ form[form-order] button[type="submit"]:hover {
   }
 }
 
+/* Vẽ bên front-end */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+/* Cột hình ảnh */
+.image-cell {
+  width: 120px;
+  height: 80px;
+  text-align: center;
+}
+
+.image-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Giúp ảnh không méo, cắt vừa khung */
+  border-radius: 8px; /* Bo góc nhẹ cho đẹp */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-cell img:hover {
+  transform: scale(1.05); /* Hiệu ứng phóng nhẹ khi hover */
+}
+
+/* Input chỉnh số lượng */
+.quantity-input {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+/* Nút xóa */
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
 /* End Cart */
